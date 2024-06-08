@@ -1,0 +1,65 @@
+console.log = function () {};: Disables console logging by overriding the console.log function with an empty function.
+
+var Snake = (function () {: Starts the definition of an Immediately Invoked Function Expression (IIFE) 
+which creates a self-contained module for the Snake game.
+
+Constants and Variables
+INITIAL_TAIL: Initial length of the snake's tail.
+
+fixedTail: Determines if the tail length is fixed.
+
+intervalID: Stores the interval ID for the game loop.
+
+tileCount: Number of tiles in the game grid.
+
+gridSize: Size of each tile in the game grid.
+
+INITIAL_PLAYER: Initial position of the player (snake's head).
+
+velocity: Current movement direction of the snake.
+
+player: Current position of the player.
+
+walls: Determines if the game has walls.
+
+fruit: Position of the fruit.
+
+trail: Array representing the snake's tail.
+
+tail: Current length of the snake's tail.
+
+reward: Reward points for the current game state.
+
+points: Current points scored.
+
+pointsMax: Maximum points scored.
+
+ActionEnum: Enum for possible actions (directions).
+
+Object.freeze(ActionEnum): Freezes the ActionEnum object to prevent modifications.
+
+lastAction: Last action taken by the player.
+
+game: Main game object containing functions to control game actions, reset the game, 
+generate random fruit positions, log the game state, and the main game loop.
+
+EventHandler
+keyPush: Event handler for keydown events. Calls the appropriate game action based on the key pressed 
+(left, up, right, down, space for pause, esc for reset).
+
+Return Object
+start: Starts the game with a specified frames per second (fps).
+loop: Exposes the game loop function.
+reset: Exposes the game reset function.
+stop: Stops the game by clearing the interval.
+setup: Provides functions to enable or disable keyboard input, set wall state, set tile count, and set fixed tail state.
+action: Exposes functions to manually trigger game actions (left, up, right, down).
+pause: Pauses the game by setting velocity to zero.
+clearTopScore: Resets the maximum points.
+data: Provides access to game data (player position, fruit position, trail).
+info: Provides game information (tile count).
+
+Start the Game
+Snake.start(6.5): Starts the game with a frame rate calculated from 6.5 fps.
+Snake.setup.keyboard(true): Enables keyboard input for the game.
+Snake.setup.fixedTail(false): Sets the tail length to be variable.
