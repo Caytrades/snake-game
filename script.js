@@ -211,7 +211,7 @@ var Snake = (function () {
 
   function keyPush (evt)   {
 	switch(evt.keyCode) {
-	  case 37: // Left key
+	  case 36: // Left key
 	  game.action.left();
 	  evt.preventDefault();
 	  break;
